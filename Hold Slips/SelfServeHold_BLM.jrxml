@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.0.0.final using JasperReports Library version 6.0.0  -->
-<!-- 2016-06-02T14:27:32 -->
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2023-12-29T10:19:36 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HoldSlip" pageWidth="234" pageHeight="792" columnWidth="222" leftMargin="10" rightMargin="2" topMargin="2" bottomMargin="2" uuid="191868db-6ac8-4522-869b-59605660e1bf">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
@@ -124,7 +124,7 @@
 			<property name="local_mesure_unitheight" value="pixel"/>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
-				<reportElement key="textField-1" x="2" y="10" width="48" height="25" uuid="7c438b78-d354-43e9-bab6-4d567c988507"/>
+				<reportElement key="textField-1" x="2" y="10" width="190" height="25" uuid="7c438b78-d354-43e9-bab6-4d567c988507"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -134,7 +134,7 @@
 				<textElement>
 					<font size="18" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{patron_last_name} != null ? ($F{patron_last_name}.length()< 3 ? $F{patron_last_name}.toUpperCase() : $F{patron_last_name}.toUpperCase().substring( 0,3 )) : ""]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{patron_last_name} != null ? ($F{patron_last_name}.length()< 4 ? $F{patron_last_name}.toUpperCase() : $F{patron_last_name}.toUpperCase().substring( 0,4 )) : "") + " " + ($F{patron_first_name} != null ? ($F{patron_first_name}.length()< 3 ? $F{patron_first_name}.toUpperCase() : $F{patron_first_name}.toUpperCase().substring( 0,3 )) : "")]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField-4" positionType="Float" x="-1" y="189" width="193" height="27" uuid="229ee561-9ccf-47f5-9c49-c7b3cba17a38"/>
@@ -241,7 +241,7 @@
 				<textFieldExpression><![CDATA[$F{precid}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
-				<reportElement key="textField-1" x="2" y="40" width="80" height="25" uuid="09bf0891-22de-4b6e-8527-be5e5078fff3"/>
+				<reportElement key="textField-1" x="2" y="40" width="138" height="25" uuid="09bf0891-22de-4b6e-8527-be5e5078fff3"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -252,19 +252,6 @@
 					<font size="18" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{v_p_barcode}.substring( 10,14 )+"  "+$F{v_p_barcode}.substring( 14 )]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
-				<reportElement key="textField-1" x="50" y="10" width="32" height="25" uuid="a5270be9-6598-4ac6-bf78-8099de3a4f64"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement>
-					<font size="18" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{patron_first_name} != null ? ($F{patron_first_name}.length()< 1 ? $F{patron_first_name}.toUpperCase() : $F{patron_first_name}.toUpperCase().substring( 0,1 )) : ""]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField-3" positionType="Float" x="-1" y="230" width="193" height="19" uuid="c9c0b7f6-efde-4989-a99e-0c3b181f1995"/>
