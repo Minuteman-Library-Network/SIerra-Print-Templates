@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2023-12-01T11:19:13 -->
+<!-- 2024-01-03T10:02:22 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HoldSlip" pageWidth="234" pageHeight="792" columnWidth="222" leftMargin="10" rightMargin="2" topMargin="2" bottomMargin="2" uuid="af51d865-d325-4abf-a1e4-1f42dd44af47">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
@@ -210,7 +210,7 @@
 				<textElement>
 					<font size="18" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[($F{v_p_alias} != null ? $F{v_p_alias}: $F{v_p_name})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{v_p_alias}.equals("") ? $F{v_p_name} : $F{v_p_alias}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField-4" positionType="Float" x="8" y="150" width="193" height="27" uuid="76d6f889-9b27-4eb8-a467-7b27628162f9"/>
