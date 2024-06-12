@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2023-09-15T14:04:13 -->
+<!-- 2024-04-18T14:24:16 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Title_Paging_List" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9036557c-30a0-473b-8a68-ce59fce5b757">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
@@ -340,7 +340,7 @@
 					<font fontName="Serif" size="11" isBold="true"/>
 					<paragraph lineSpacingSize="0.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA[" " + $F{Item_Call_Number} + (($F{Item_Volume} == null) ? "" : $F{Item_Volume})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[" " + $F{Item_Call_Number} + (($F{Item_Volume} == null) ? "" : " " + $F{Item_Volume})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="451" y="0" width="120" height="15" uuid="d0a20bb3-290a-4915-945c-395b843fdeaf">
