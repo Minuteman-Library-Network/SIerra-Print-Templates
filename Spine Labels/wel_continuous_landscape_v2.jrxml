@@ -199,7 +199,7 @@
 		<band splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="88" splitType="Stretch">
+		<band height="102" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField" x="0" y="0" width="52" height="102" uuid="e4fb10bb-51e2-4e4a-b418-87d2701adc73">
