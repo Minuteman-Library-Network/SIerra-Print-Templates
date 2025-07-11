@@ -145,7 +145,7 @@
 				<textElement rotation="Right">
 					<font size="18" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[($F{v_p_alias} != null ? $F{v_p_alias}: $F{v_p_name})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{v_p_alias}.equals("") ? $F{v_p_name} : $F{v_p_alias})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField-3" positionType="Float" x="68" y="0" width="19" height="120" uuid="2515e611-adf5-48b2-8aa8-5df79c42679e">
