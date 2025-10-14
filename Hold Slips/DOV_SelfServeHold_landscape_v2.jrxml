@@ -130,11 +130,11 @@
 	<detail>
 		<band height="450" splitType="Stretch">
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
-				<reportElement key="textField-1" x="169" y="0" width="48" height="320" uuid="51af9b99-022a-41da-83ff-ad1ba0f7f9c4">
+				<reportElement key="textField-1" x="148" y="0" width="46" height="320" uuid="51af9b99-022a-41da-83ff-ad1ba0f7f9c4">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -145,10 +145,10 @@
 				<textElement rotation="Right">
 					<font size="18" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[($F{v_p_alias}.equals("") ? $F{v_p_name} : $F{v_p_alias})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[(($F{v_p_alias}.equals("") || $F{v_p_alias} == null) ? $F{v_p_name} : $F{v_p_alias})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-3" positionType="Float" x="68" y="0" width="19" height="120" uuid="2515e611-adf5-48b2-8aa8-5df79c42679e">
+				<reportElement key="textField-3" positionType="Float" x="55" y="0" width="19" height="120" uuid="2515e611-adf5-48b2-8aa8-5df79c42679e">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -165,7 +165,7 @@
 				<textFieldExpression><![CDATA[$F{v_i_barcode}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-4" positionType="Float" x="87" y="0" width="19" height="300" uuid="ed110f7c-080b-43fa-b3d3-268a04349df8">
+				<reportElement key="textField-4" positionType="Float" x="74" y="0" width="19" height="300" uuid="ed110f7c-080b-43fa-b3d3-268a04349df8">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
@@ -209,7 +209,7 @@
 				<textFieldExpression><![CDATA["."]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-12" positionType="Float" x="47" y="0" width="19" height="219" uuid="b11d3109-d280-4497-8c6b-3f848b5690d8">
+				<reportElement key="textField-12" positionType="Float" x="36" y="0" width="19" height="219" uuid="b11d3109-d280-4497-8c6b-3f848b5690d8">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -224,10 +224,10 @@
 				<textElement rotation="Right">
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[((($F{v_p_email} != null) && !($F{v_p_alias}.trim().endsWith("*")) ) ? "EMAIL": $F{v_p_telephone})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[((($F{v_p_email} != null) && !($F{v_p_alias}.trim().endsWith("*"))) ? "EMAIL" : ($F{v_p_telephone} != null ? $F{v_p_telephone} : $F{v_p_telephone2}))]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="textField-11" positionType="Float" x="112" y="0" width="32" height="280" uuid="b68277a4-f8f5-4be3-89f4-e50be16686a0">
+				<reportElement key="textField-11" positionType="Float" x="95" y="0" width="32" height="280" uuid="b68277a4-f8f5-4be3-89f4-e50be16686a0">
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
@@ -243,7 +243,7 @@
 				<text><![CDATA[ITEM MUST BE CHECKED OUT AT THE CIRCULATION DESK]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-3" positionType="Float" x="148" y="0" width="19" height="150" uuid="22352237-ac7e-4c30-a337-550b3dbdafd7">
+				<reportElement key="textField-3" positionType="Float" x="127" y="0" width="19" height="150" uuid="22352237-ac7e-4c30-a337-550b3dbdafd7">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -261,7 +261,7 @@
 				<textFieldExpression><![CDATA[$F{pull_date}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-12" positionType="Float" x="8" y="0" width="17" height="160" uuid="e4529720-f186-4d2f-944f-f954026ed2a4">
+				<reportElement key="textField-12" positionType="Float" x="0" y="0" width="17" height="160" uuid="e4529720-f186-4d2f-944f-f954026ed2a4">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -278,7 +278,7 @@
 				<textFieldExpression><![CDATA[$F{hold_pickup_loc}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-3" positionType="Float" x="28" y="0" width="19" height="300" uuid="b979f4ad-2795-42ef-86bb-afc4007e34bf">
+				<reportElement key="textField-3" positionType="Float" x="17" y="0" width="19" height="300" uuid="b979f4ad-2795-42ef-86bb-afc4007e34bf">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
