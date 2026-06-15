@@ -313,7 +313,7 @@
 				<textElement textAlignment="Left">
 					<font fontName="SansSerif" size="12" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{Patron_Name}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{Patron_Name_C}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="textField-45" mode="Transparent" x="0" y="126" width="565" height="34" forecolor="#000000" backcolor="#FFFFFF" uuid="9b8ab51c-e87b-4f59-b058-852cabf8956a"/>
