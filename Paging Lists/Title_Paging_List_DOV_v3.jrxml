@@ -19,6 +19,12 @@
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="Style1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{Item_Pickup_Location}.startsWith( "DOVER" )]]></conditionExpression>
+			<style isBold="true"/>
+		</conditionalStyle>
+	</style>
 	<field name="Item_Title" class="java.lang.String">
 		<fieldDescription><![CDATA[v_b_title]]></fieldDescription>
 	</field>
@@ -269,16 +275,13 @@
 		<variableExpression><![CDATA[$F{Item_Location}]]></variableExpression>
 		<initialValueExpression><![CDATA[""]]></initialValueExpression>
 	</variable>
-	<group name="Adult_Group" isStartNewPage="true">
-		<groupExpression><![CDATA[$F{Item_Location} != null && ($F{Item_Location}.startsWith("DOVER/Adult") || $F{Item_Location}.startsWith("DOVER/New"))]]></groupExpression>
-	</group>
 	<group name="Children_Group" isStartNewPage="true">
 		<groupExpression><![CDATA[$F{Item_Location} != null &&
  $F{Item_Location}.startsWith("DOVER/Children")]]></groupExpression>
 	</group>
 	<group name="YA_Group" isStartNewPage="true">
 		<groupExpression><![CDATA[$F{Item_Location} != null &&
- $F{Item_Location}.startsWith("DOVER/YA")]]></groupExpression>
+ ($F{Item_Location}.startsWith("DOVER/YA") || $F{Item_Location}.startsWith("DOVER/Audiovisual"))]]></groupExpression>
 	</group>
 	<background>
 		<band splitType="Stretch"/>
@@ -334,7 +337,7 @@
 				<textFieldExpression><![CDATA[$F{Item_Location}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="64" width="280" height="16" uuid="f1e093ae-2710-4641-a2d2-3eac95c9123d">
+				<reportElement style="Style1" x="0" y="64" width="280" height="16" uuid="f1e093ae-2710-4641-a2d2-3eac95c9123d">
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
