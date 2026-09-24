@@ -11,10 +11,10 @@
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
-	<style name="Style1">
+	<style name="Style1" mode="Opaque">
 		<conditionalStyle>
 			<conditionExpression><![CDATA[$F{Item_Pickup_Location}.startsWith( "MEDFORD" )]]></conditionExpression>
-			<style isBold="true"/>
+			<style mode="Opaque" backcolor="#FFFF99"/>
 		</conditionalStyle>
 	</style>
 	<field name="Item_Title" class="java.lang.String">
@@ -264,7 +264,7 @@
 		<fieldDescription><![CDATA[v_p_mobile_number]]></fieldDescription>
 	</field>
 	<group name="Adult_Fiction_Group" isStartNewPage="true">
-		<groupExpression><![CDATA[$F{Item_Call_Number} != null && ($F{Item_Call_Number}.toLowerCase().startsWith("fiction") || $F{Item_Call_Number}.toLowerCase().startsWith("graphic") || $F{Item_Call_Number}.toLowerCase().startsWith("horror") || $F{Item_Call_Number}.toLowerCase().startsWith("mystery") || $F{Item_Call_Number}.toLowerCase().startsWith("pb") || $F{Item_Call_Number}.toLowerCase().startsWith("lt") || $F{Item_Call_Number}.toLowerCase().startsWith("romance") || $F{Item_Call_Number}.toLowerCase().startsWith("sf") || $F{Item_Call_Number}.toLowerCase().startsWith("world"))]]></groupExpression>
+		<groupExpression><![CDATA[$F{Item_Call_Number} != null && ($F{Item_Call_Number}.toLowerCase().startsWith("fiction") || $F{Item_Call_Number}.toLowerCase().startsWith("graphic") || $F{Item_Call_Number}.toLowerCase().startsWith("horror") || $F{Item_Call_Number}.toLowerCase().startsWith("mystery") || $F{Item_Call_Number}.toLowerCase().startsWith("pb") || $F{Item_Call_Number}.toLowerCase().startsWith("lt") || $F{Item_Call_Number}.toLowerCase().startsWith("romance") || $F{Item_Call_Number}.toLowerCase().startsWith("sf") || $F{Item_Call_Number}.toLowerCase().startsWith("test prep") || $F{Item_Call_Number}.toLowerCase().startsWith("world"))]]></groupExpression>
 	</group>
 	<group name="Children_Group" isStartNewPage="true">
 		<groupExpression><![CDATA[$F{Item_Location} != null &&

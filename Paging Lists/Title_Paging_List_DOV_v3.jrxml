@@ -281,7 +281,7 @@
 	</group>
 	<group name="YA_Group" isStartNewPage="true">
 		<groupExpression><![CDATA[$F{Item_Location} != null &&
- ($F{Item_Location}.startsWith("DOVER/YA") || $F{Item_Location}.startsWith("DOVER/Audiovisual"))]]></groupExpression>
+ ($F{Item_Location}.startsWith("DOVER/YA") || $F{Item_Location}.startsWith("DOVER/Young") || $F{Item_Location}.startsWith("DOVER/Audiovisual") || $F{Item_Location}.startsWith("DOVER/AV"))]]></groupExpression>
 	</group>
 	<background>
 		<band splitType="Stretch"/>
