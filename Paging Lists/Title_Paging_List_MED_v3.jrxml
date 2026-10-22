@@ -355,7 +355,7 @@
 				<textElement>
 					<font fontName="SansSerif" size="11"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{Item_Call_Number}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{Item_Call_Number} + (($F{Item_Volume} == null) ? "" : " " + $F{Item_Volume})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField-8" x="310" y="15" width="159" height="15" uuid="69338899-6d02-4dba-9e70-a6c4cfd630c0">
